@@ -1,3 +1,0 @@
-private final int hashCode (K key) {
-		return Objects.hashCode(key);
-	}
