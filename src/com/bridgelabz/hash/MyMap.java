@@ -6,7 +6,8 @@ public class MyMap<K,V>
 {
 	LinkedListExample myLinkedList;
 
-	public MyMap(LinkedListExample myLinkedList) {
+	public MyMap(LinkedListExample myLinkedList)
+	{
 		super();
 		this.myLinkedList = myLinkedList;
 	}
@@ -27,7 +28,8 @@ public class MyMap<K,V>
 	}
 
 	@Override
-	public String toString() {
+	public String toString() 
+	{
 		return "MyMap [myLinkedList=" + myLinkedList + "]";
 	}
 	

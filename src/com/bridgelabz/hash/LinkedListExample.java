@@ -1,8 +1,7 @@
 package com.bridgelabz.hash;
 
-import demo.MyNode;
-
-public class LinkedListExample<K,V> {
+public class LinkedListExample<K,V> 
+{
 public static MyNode head;
 	
 	public void append(MyMapNode<K, V> myMapNode ) 

@@ -1,6 +1,7 @@
 package com.bridgelabz.hash;
 
-public class MyNode<K> {
+public class MyNode<K> 
+{
 	K data ;
 	MyNode next;
 	
@@ -38,7 +39,8 @@ public class MyNode<K> {
 		this.next = next;
 	}
 	@Override
-	public String toString() {
+	public String toString() 
+	{
 		return "MyNode [data=" + data + ", next=" + next + "]";
 	}
 
