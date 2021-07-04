@@ -43,5 +43,4 @@ public class MyNode<K>
 	{
 		return "MyNode [data=" + data + ", next=" + next + "]";
 	}
-
 }

@@ -22,6 +22,14 @@ public class MyLinkedListHashMap<K, V> {
 		int index = hashCode % numBuckets;
 		return index;
 	}
+	public V get(K key)
+	{
+		int index = this.getBucketIndex(key);
+		LinkedListExample myLinkedList = this.myBucketArray.get(index);
+		if(myLinkedList == null) return null;
+		MyMapNode<K, V> myMapNode = (MyMapNode<K, V>) myLinkedList.findElement(key);
+		return (myMapNode == null) ? null : myMapNode.getValue;
+	}
 	public void add(K key,V value)
 	{
 		int index = this.getBucketIndex(key);
@@ -31,7 +39,7 @@ public class MyLinkedListHashMap<K, V> {
 			myLinkedList = new LinkedListExample<>();
 			this.myBucketArray.set(index,myLinkedList);
 		}
-		MyMapNode<K, V> myMapNode = (MyMapNode<K, V>) myLinkedList.search(key);
+		MyMapNode<K, V> myMapNode = (MyMapNode<K, V>) myLinkedList.findElement(key);
 		if(myMapNode == null)
 		{
 			myMapNode = new MyMapNode<K, V>(key, value);
@@ -46,7 +54,6 @@ public class MyLinkedListHashMap<K, V> {
 	public String toString() {
 		return "MyLinkedListMap [numBuckets=" + numBuckets + "]";
 	}
-	
 }
 
 

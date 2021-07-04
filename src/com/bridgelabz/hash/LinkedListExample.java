@@ -3,7 +3,6 @@ package com.bridgelabz.hash;
 public class LinkedListExample<K,V> 
 {
 public static MyNode head;
-	
 	public void append(MyMapNode<K, V> myMapNode ) 
 	{
 		MyNode newNode = new MyNode();
