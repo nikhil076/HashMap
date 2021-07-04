@@ -6,14 +6,20 @@ public class MyMap<K,V>
 {
 	LinkedListExample myLinkedList;
 
-	public MyMap(LinkedListExample myLinkedList)
-	{
+	public MyMap(LinkedListExample myLinkedList) {
 		super();
 		this.myLinkedList = myLinkedList;
 	}
-
+	
+	public V get(K key)
+	{
+		MyMapNode<K,V> myMapNode = (MyMapNode<K,V>) this.myLinkedList.findElement(key);
+		return (myMapNode == null) ? null : myMapNode.getValue();
+	}
+	
 	public void add(K key, V value)
 	{
+		
 		MyMapNode<K, V> myMapNode = (MyMapNode<K,V>) this.myLinkedList.findElement(key);
 		
 		if(myMapNode == null)
@@ -28,31 +34,24 @@ public class MyMap<K,V>
 	}
 
 	@Override
-	public String toString() 
-	{
+	public String toString() {
 		return "MyMap [myLinkedList=" + myLinkedList + "]";
 	}
 	
 	
 	public static void main(String args[])
 	{
-		String sentence = "To be or not to be";
-		MyMap<String, Integer> myMap = new MyMap<>();
-		String word = sentence.toLowerCase().split(" ");
+		String sentence ="Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
+		MyLinkedListHashMap<String, Integer> myLinkedHashMap = new MyLinkedListHashMap<>();
+		String[] words = sentence.toLowerCase().split(" ");
 		for(String word : words)
 		{
-			Integer value = myMap.get(Word);
-			if(value == null)
-			{
-				value = 1;
-			}
-			else
-			{
-				value = value + 1;
-			}
-			myMap.add(word, value);
+			Integer value = MyLinkedListHashMap.get(word);
+			if(value = null)value = 1;
+			else value = + 1;
+			myLinkedHashMap.add(word, value);
 		}
-		int frequency = myMap.get("to");
-		System.out.println(myMap);
+		System.out.println(myLinkedHashMap);
+		int frequency = myLinkedHashMap("paranoid");
 	}
 }
